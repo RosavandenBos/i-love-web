@@ -1,0 +1,7 @@
+body {
+    background: #F3EFEA;
+
+     @media (min-width: 35rem) {
+        background: #A49076;
+    }
+}
