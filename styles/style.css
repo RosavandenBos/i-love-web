@@ -1,1 +1,204 @@
 
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --COLOR_BACKGROUND: #F8F6F3;
+    --COLOR_SURFACE: #FFFFFF;
+    --COLOR_TEXT: #3B2F2F;
+    --COLOR_TEXT_LIGHT: #817773;
+    --COLOR_ACCENT: #B77B59;
+    --COLOR_BORDER: #E8E1DA;
+
+    --FONT_BODY: Arial, sans-serif;
+    --FONT_TITLE: Georgia, serif;
+
+    --BORDER_RADIUS: 12px;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--COLOR_BACKGROUND);
+    color: var(--COLOR_TEXT);
+    font-family: var(--FONT_BODY);
+    line-height: 1.7;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 80px 24px 45px;
+}
+
+.eyebrow {
+    color: var(--COLOR_ACCENT);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 10px 0;
+    font-family: var(--FONT_TITLE);
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+.intro {
+    color: var(--COLOR_TEXT_LIGHT);
+    font-size: 1rem;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+}
+
+/* =========================
+   ACCORDION
+========================= */
+
+details {
+    margin-bottom: 14px;
+    padding: 0 24px;
+    background-color: var(--COLOR_SURFACE);
+    border: 1px solid var(--COLOR_BORDER);
+    border-radius: var(--BORDER_RADIUS);
+    transition: border-color 0.2s ease;
+}
+
+details:hover {
+    border-color: var(--COLOR_ACCENT);
+}
+
+summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+    padding: 18px 30px 18px 0;
+    color: var(--COLOR_TEXT);
+    font-family: var(--FONT_TITLE);
+    font-size: 1.25rem;
+    cursor: pointer;
+    list-style: none;
+}
+
+/* Verberg standaard pijltje */
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Eigen uitklappijltje */
+
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    color: var(--COLOR_ACCENT);
+    font-family: var(--FONT_BODY);
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+details[open] summary::after {
+    content: "−";
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+details[open] summary {
+    border-bottom: 1px solid var(--COLOR_BORDER);
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin: 25px 0 8px;
+    color: var(--COLOR_ACCENT);
+    font-family: var(--FONT_TITLE);
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+p {
+    margin: 12px 0;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+    margin-bottom: 20px;
+}
+
+li {
+    padding-left: 5px;
+    margin-bottom: 6px;
+}
+
+li::marker {
+    color: var(--COLOR_ACCENT);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px;
+    border-top: 1px solid var(--COLOR_BORDER);
+    color: var(--COLOR_TEXT_LIGHT);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 50px 20px 30px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    main {
+        padding: 0 15px 40px;
+    }
+
+    details {
+        padding: 0 18px;
+    }
+
+    summary {
+        min-height: 65px;
+        font-size: 1.1rem;
+    }
+
+}
