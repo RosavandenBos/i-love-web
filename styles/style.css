@@ -163,6 +163,26 @@ li::marker {
 }
 
 /* =========================
+   LINKS
+========================= */
+
+a {
+    color: var(--COLOR_ACCENT);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--COLOR_TEXT);
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--COLOR_ACCENT);
+    outline-offset: 4px;
+}
+
+/* =========================
    FOOTER
 ========================= */
 
